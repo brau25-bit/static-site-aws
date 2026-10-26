@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio práctico de Amazon S3" />
+    <title>S3 Lab · Object Storage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#inicio" aria-label="S3 Lab, inicio">
+          <span class="brand-mark">S3</span>
+          <span>LAB<span class="orange">.</span></span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+          <a class="nav-item active" href="#inicio"><span>⌂</span> Resumen</a>
+          <a class="nav-item" href="#bucket"><span>▱</span> Bucket</a>
+          <a class="nav-item" href="#objetos"><span>◇</span> Objetos</a>
+          <a class="nav-item" href="#acceso"><span>♧</span> Permisos</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="progress-label"><span>Progreso</span><strong>25%</strong></div>
+          <div class="progress-track"><span></span></div>
+          <p>1 de 4 módulos completados</p>
+          <button class="outline-button" id="resetLab">Reiniciar laboratorio</button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu-button" aria-label="Abrir menú">☰</button>
+          <div class="crumbs"><span>Laboratorios</span><b>/</b><strong>Amazon S3</strong></div>
+          <div class="environment"><i></i> Entorno listo</div>
+          <button class="avatar" aria-label="Perfil">AM</button>
+        </header>
+
+        <section class="hero" id="inicio">
+          <div class="hero-copy">
+            <p class="eyebrow">LABORATORIO PRÁCTICO · NIVEL INICIAL</p>
+            <h1>Almacena, organiza<br />y comparte <em>sin límites.</em></h1>
+            <p class="intro">Aprende los fundamentos de Amazon S3 creando un bucket, cargando objetos y controlando el acceso a tus archivos.</p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#bucket">Comenzar laboratorio <span>→</span></a>
+              <button class="text-button" id="tourButton">Ver recorrido <span>↗</span></button>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+            <div class="bucket-illustration">
+              <span class="bucket-top"></span><span class="bucket-body"></span><b>S3</b>
+            </div>
+            <div class="file file-one">.jpg</div><div class="file file-two">.csv</div><div class="file file-three">.pdf</div>
+            <div class="spark spark-one">✦</div><div class="spark spark-two">✦</div>
+          </div>
+        </section>
+
+        <section class="stats" aria-label="Estado del entorno">
+          <article><span class="stat-icon orange-bg">▱</span><div><strong>1</strong><small>Buckets creados</small></div></article>
+          <article><span class="stat-icon blue-bg">◇</span><div><strong>0</strong><small>Objetos cargados</small></div></article>
+          <article><span class="stat-icon green-bg">◌</span><div><strong>us-east-1</strong><small>Región activa</small></div></article>
+        </section>
+
+        <section class="lab-section" id="bucket">
+          <div class="section-heading"><div><p class="eyebrow">TU RUTA DE APRENDIZAJE</p><h2>Completa el laboratorio</h2></div><span class="module-count">01 / 04</span></div>
+          <div class="lab-grid">
+            <article class="module completed">
+              <div class="module-number">01</div><span class="status">✓</span>
+              <p>PREPARACIÓN</p><h3>Conoce Amazon S3</h3>
+              <span class="duration">✓ Completado</span>
+            </article>
+            <article class="module current" id="objetos">
+              <div class="module-number">02</div><span class="status">→</span>
+              <p>PRÁCTICA GUIADA</p><h3>Crea tu primer bucket</h3>
+              <span class="duration">◷ 10 min</span>
+            </article>
+            <article class="module locked" id="acceso">
+              <div class="module-number">03</div><span class="status">⌁</span>
+              <p>PRÁCTICA GUIADA</p><h3>Carga y organiza objetos</h3>
+              <span class="duration">◷ 15 min</span>
+            </article>
+            <article class="module locked">
+              <div class="module-number">04</div><span class="status">⌁</span>
+              <p>CONFIGURACIÓN</p><h3>Gestiona permisos</h3>
+              <span class="duration">◷ 10 min</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="workspace">
+          <div class="workspace-head"><div><p class="eyebrow">CONSOLA DE PRÁCTICA</p><h2>Tu espacio de trabajo</h2></div><span class="region-badge">● us-east-1</span></div>
+          <div class="console-card">
+            <div class="console-top"><div class="console-logo"><b>aws</b> <span>Amazon S3</span></div><button id="createBucket">+ Crear bucket</button></div>
+            <div class="bucket-row"><span class="bucket-icon">▱</span><div><strong id="bucketName">Aún no hay buckets</strong><small id="bucketHint">Crea un bucket para comenzar a almacenar objetos</small></div><span class="row-arrow">→</span></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
